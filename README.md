@@ -1,1 +1,1 @@
-# Lucky-Star---Cy
+Cy
