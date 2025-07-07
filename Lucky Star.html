@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FIND THE LUCKY STAR</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+      position: relative;
+      font-family: Arial, sans-serif;
+    }
+
+    .title {
+      position: fixed;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 28px;
+      color: gold;
+      font-weight: bold;
+      z-index: 9999;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .star-link {
+      margin-left: 10px;
+      text-decoration: none;
+      font-size: 36px;
+      transition: transform 0.3s;
+    }
+
+    .star-link:hover {
+      transform: rotate(20deg) scale(1.3s);
+    }
+
+    .star {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(white, gold);
+      clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%,
+        68% 57%, 79% 91%,
+        50% 70%, 21% 91%,
+        32% 57%, 2% 35%,
+        39% 35%
+      );
+      box-shadow: 0 0 8px 2px gold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      z-index: 1;
+    }
+
+    .star:hover {
+      transform: scale(1.4);
+      box-shadow: 0 0 12px 5px white;
+    }
+
+    a.star {
+      text-decoration: none;
+      display: inline-block;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="title">
+    FIND THE LUCKY STAR 
+    <a href="link19.html" class="star-link" title="🌟">🌟</a>
+  </div>
+
+<script>
+    window.onload = function () {
+      const specialLinks = [
+      "link1.html", "link2.html", "link3.html", "link4.html", "link5.html",
+      "link6.html", "link7.html", "link8.html", "link9.html", "link10.html",
+      "link11.html", "link12.html", "link13.html", "link14.html", "link15.html",
+      "link16.html", "html17.html", "link18.html", "link20.html"
+    ];
+
+    const totalStars = 150;
+    const specialPositions = new Set();
+
+    while (specialPositions.size < specialLinks.length) {
+      specialPositions.add(Math.floor(Math.random() * totalStars));
+    }
+
+    for (let i = 0; i < totalStars; i++) {
+      const isSpecial = specialPositions.has(i);
+      const el = document.createElement(isSpecial ? "a" : "div");
+      el.classList.add("star");
+
+      const x = Math.random() * (window.innerWidth - 20);
+      const y = 100 + Math.random() * (window.innerHeight - 150);
+      
+      el.style.left = `${x}px`;
+      el.style.top = `${y}px`;
+
+      if (isSpecial) {
+        const index = [...specialPositions].indexOf(i);
+        el.href = specialLinks[index];
+        el.target = "_blank";
+        el.title = "⭐ star";
+      }
+
+      document.body.appendChild(el);
+      
+    }
+  };
+</script>
+
+</body>
+</html>
+
+      

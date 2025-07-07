@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rainbow site</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding-top: 100px;  
+    }
+
+    
+    .rainbow-text {
+      font-size: 80px;
+      font-weight: bold;
+      background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet
+      );  
+      background-size: 400% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowFlow 5s linear infinite;
+    }
+
+    .large {
+        font-size: 80px;
+    }
+
+    .small {
+        font-size: 20px;
+    }
+
+    @keyframes rainbowFlow {
+      0% { background-position: 0% 50%; }
+      100% {background-position: 100% 50%; }  
+    }
+  </style>
+</head>
+<body>
+
+    <p class="rainbow-text large"> WELCOME TO THE RAINBOW SITE! </p>
+
+    <p class="rainbow-text small"> Just rainbows. Not the lucky one. </p>
+
+    <p class="rainbow-text small">Go back. Close this tab and try another star if you want. Good luck. ❤️⭐</p>
+</body>
+</html>
+

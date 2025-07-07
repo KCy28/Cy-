@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HINT</title>
+  <style>
+    body {
+      background-color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 10px;  
+    }
+
+    
+    .shiny {
+      font-weight: bold;
+      background: linear-gradient(90deg, yellow, white, gold, silver);    
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: duoFlow 5s linear infinite;
+      display: inline-block;
+    }
+
+    .large {
+        font-size: 80px;
+        margin-bottom: 60px;
+        font-family:'Times New Roman';
+    }
+
+    .medium {
+        font-size: 50px;
+        margin-bottom: 80px;
+        padding-bottom: 5px;
+    }
+
+    .medium::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, yellow, white, gold, silver);
+      background-size: 200% auto;
+      animation: duoFlow 5s linear infinite;
+    }
+    .small {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    @keyframes duoFlow {
+      0% { background-position: 0% 50%; }
+      100% {background-position: 100% 50%; }  
+    }
+  </style>
+</head>
+<body>
+
+    <p class="shiny large"> You got the hint star! </p>
+    <p class="shiny medium"><u>HINT: There are only 20 working stars. Some stars are just a display and do nothing.</u></p>
+    <p class="shiny small">Go back. Close this tab and try another star if you want. Good luck. ❤️⭐</p>
+
+</body>
+</html>
+

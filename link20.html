@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LUCKY STAR</title>
+    <style>
+      body {
+        background-color: black;
+        color: gold;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align: center;
+        padding-top: 100px;
+        overflow: hidden;
+        position: relative;
+      }  
+        
+      .breathing {
+        font-size: 80px;
+        font-weight: bold;
+        color: gold;
+        animation: breathe 2s ease-in-out infinite;
+        margin-bottom: 50px;
+      }
+
+    
+      .win {
+        font-size: 50px;
+        color: white;
+        margin-bottom: 30px;
+      }
+
+      .click {
+        font-size: 30px;
+        color: #00ccff;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: opacity 1s, transform 2s, background-color 0.3;
+      }
+
+      .hover {
+        background-color: rgba(0, 204, 255, 0.3);
+      }
+      
+      .faded {
+        opacity: 0;
+        transform: scale(0.9) rotate(3deg);
+      }
+
+      .result {
+        margin-top: 20px;
+        font-size: 30px;
+        color: white;
+        display: none;
+      }
+
+      .message {
+        font-size: 18px;
+        color: #888;
+        margin-top: 20px;
+        display: none;
+      }
+
+      @keyframes breathe {
+        0%, 100% {transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.1); opacity: 0.7; }
+      }
+
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background-color: gold;
+        animation: fall linear infinite;
+        z-index: 0'
+      }
+
+      @keyframes fall {
+        0% {
+            transform: translateY(-10vh) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(110vh) rotate(360deg);
+            opacity: 0;
+        }
+      }
+    </style>
+</head>
+<body>
+
+    <div class="breathing">YOU FOUND THE LUCKY STAR!!!⭐</div>
+    <div class="win">YOU WIN...</div>
+    <div class="click" onclick="revealPrize()">Click to see your prize!</div>
+    <div class="result">ABSOLUTELY NOTHING!❤️❤️❤️</div>
+    <div class="message"> But hey, that was an experience! I hope you enjoyed and appreciated my work (with the help of ChatGPT for some advanced codes). I thank you for your time and I apologize if ever that was a waste of your time. 😊 That's all. I wish you all the best! ❤️ - Cy
+
+    <script>
+      function revealPrize() {
+        const clickMsg = document.querySelector('.click');
+        const result = document.querySelector('.result');
+        const message = document.querySelector('.message')
+
+        clickMsg.classList.add('faded');
+        setTimeout(() => {
+            clickMsg.style.display = 'none';
+            result.style.display = 'block';
+            message.style.display = 'block';
+        }, 1500);
+      }  
+
+      for (let i=0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.top = '-' + (Math.random() * 20) + 'vh';
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        confetti.style.opacity = Math.random();
+        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(confetti);
+      }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+</html>
